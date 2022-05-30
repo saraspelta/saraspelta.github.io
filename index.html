@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="style.css">
     <style id="css" type="text/css"></style>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Font Awesome 5.15.1 CSS -->
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -27,7 +29,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#intro">
-      <img src="immagini/logo.gif" width="auto" height="45" alt="logo Sara Spelta" class="d-inline-block "><!--<span class="navbar-title">Sara Spelta</span>-->
+      <img src="immagini/logo.gif" width="auto" height="45" alt="logo Sara Spelta" class="d-inline-block ">
     </a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,26 +38,26 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="#intro" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"></a>
+          <a class="nav-link active single" href="#intro" aria-current="page" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show"></a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="#about">Chi sono</a>
+          <a class="nav-link single" href="#about">Chi sono</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#grafica">Grafica</a>
+          <a class="nav-link single" href="#grafica">Grafica</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#lettering">Lettering</a>
+          <a class="nav-link single" href="#lettering">Lettering</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#illustrazioni">Illustrazioni</a>
+          <a class="nav-link single" href="#illustrazioni">Illustrazioni</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#faq">FAQ</a>
+          <a class="nav-link single" href="#faq">FAQ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contatti" id="it">Contatti</a>
+          <a class="nav-link single" href="#contatti" id="it">Contatti</a>
         </li>
       </ul>
 
@@ -66,6 +68,8 @@
     
   </div>
 </nav>
+
+
       
 <!-------------------------------VIDEO----------------------------------------->
 <div id="intro" class="container-fluid px-0" style="padding-top:5px;">
@@ -400,13 +404,10 @@
     
   </div> 
 
+  <!--Torna su button-->
   <script>
-    //Get the button
     var mybutton = document.getElementById("myBtn");
-    
-    // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function() {scrollFunction()};
-    
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "block";
@@ -414,13 +415,23 @@
         mybutton.style.display = "none";
       }
     }
-    
-    // When the user clicks on the button, scroll to the top of the document
     function topFunction() {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
-    </script>
+  </script>
+
+<!--autoclose navbar-->
+<script>
+  $( document ).ready(function() {
+      $('.nav-item').click(function(){
+          $('.navbar div').removeClass('show');
+      }) 
+      $('.single').click(function(){
+          $('.navbar div').removeClass('show');
+      })
+  })  
+</script>
  
  
  <!--language en/it-->
