@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sara Spelta - Designer</title>
     <meta name="description" content="Sara Spelta">
-    <link rel="icon" href="immagini/logo.gif">
+    <link rel="icon" href="immagini/logo-nero.gif">
 
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- MDB 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>-->
        
     <link rel="stylesheet" href="style.css">
     <style id="css" type="text/css"></style>
@@ -164,27 +168,50 @@
         <center><hr style="width:15%; height:2px;border-width:0;color:white;background-color:white;;"></center>
       </h3>
       <div class="container">
-        <div class="row" style="margin:0px;">
-          <div class="col p-0" style="margin:0px;">
-              <img src="https://www.studiolegalearenosto.it/wp-content/uploads/2021/03/casa-comodato-figlio-2.jpg" class="img-fluid" alt="...">
+        <div class="row">
+          <div class="col p-0">
+              <div class="img-hover-zoom">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample31.jpg" alt="Avatar" class="image">
+                <div class="overlay">My Name is John</div>
+              </div>
+
             </div>
-          <div class="col p-0" style="margin:0px;">
-            <img src="https://www.nonsprecare.it/wp-content/uploads/2017/03/come-parlano-alberi-significato-simbolico-1.jpg" class="img-fluid" alt="...">
+          
+          <div class="col p-0">
+            <div class="img-hover-zoom">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample31.jpg" alt="Avatar" class="image">
+              <div class="overlay">My Name is John</div>
+            </div>
           </div>
-          <div class="col p-0" style="margin:0px;">
-            <img src="https://www.latuaauto.com/wp-content/uploads/2016/06/che-macchina-comprare.jpg" class="img-fluid" alt="...">
+
+          <div class="col p-0">
+            <div class="img-hover-zoom">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample31.jpg" alt="Avatar" class="image">
+                <div class="overlay">My Name is John</div>
+              </div>
           </div>
         </div>
       
         <div class="row">
           <div class="col p-0">
-            <img src="http://wips.plug.it/cips/paginegialle.it/magazine/cms/2022/01/cane-di-razza.jpg?w=768&h=432&a=c" class="img-fluid" alt="...">
+            <div class="img-hover-zoom">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample31.jpg" alt="Avatar" class="image">
+              <div class="overlay">My Name is John</div>
+            </div>
           </div>
+
           <div class="col p-0">
-            <img src="https://www.tremariecroissanterie.it/content/dam/tremarie/prodotti/gi%C3%A0-cotti/donuts/donuts_semplici.jpg/jcr:content/renditions/cq5dam.web.1536.1152.jpeg" class="img-fluid" alt="...">
+            <div class="img-hover-zoom">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample31.jpg" alt="Avatar" class="image">
+              <div class="overlay">My Name is John</div>
+            </div>
           </div>
+          
           <div class="col p-0">
-            <img src="https://www.greenhousepiscine.it/wp-content/uploads/2018/12/kit-piscina-cemento-armato-120-scheda1-800x526.jpg" class="img-fluid" alt="...">
+            <div class="img-hover-zoom">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample31.jpg" alt="Avatar" class="image">
+              <div class="overlay">My Name is John</div>
+            </div>
           </div>
         </div>
       </div>
@@ -399,8 +426,9 @@
           <span><i class="fab fa-youtube"></i></span>
         </a>
       </div>
+      <br/>
+      <p>© Copyright 2022 Sara Spelta - All Rights Reserved | Credits</p>
       
-      <p>© Copyright 2022 Sara Spelta - All Rights Reserved</p>
     
   </div> 
 
@@ -434,7 +462,7 @@
 </script>
  
  
- <!--language en/it-->
+ <!--language en/it
     <script>
       var italian = document.getElementById('it_click'),
   english = document.getElementById('en_click'),
@@ -480,6 +508,17 @@ function init(){
   langue(english,italian);
 }
 init();
+    </script>-->
+
+    <script>
+      $(".img-hover-zoom").hover(function(){
+        $(this).find("img").css("transform", "scale(1.1)");
+        $(this).find(".overlay").css("opacity", "1");
+        }, 
+        function(){
+          $(this).find("img").css("transform", "scale(1)");
+          $(this).find(".overlay").css("opacity", "0");
+      });
     </script>
   </body>
 </html>
