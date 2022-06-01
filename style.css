@@ -19,8 +19,11 @@ html {
 body { 
     padding-top: 65px; 
     font-family: Jakarta;
+    font-size: 17px;;
 }
-
+a{
+    font-size: 17px;;
+}
 h6 { 
    font-family:Outfit;
    font-size: 19px;
@@ -171,20 +174,20 @@ color: #FFFFFF;
     color: #FFFFFF;
 }
 
-.sezione-testo{  
-    font-size: 17px !important; 
-}
 
-ul{  
-    font-size: 17px !important; 
-}
 
-.images-desktop p, a{
+.images-desktop p{
+    font-size: 14px !important; 
+}
+.images-desktop a{
     font-size: 14px !important; 
 }
 
-.images-mobile p, a{
-    font-size: 17px !important; 
+.images-mobile p{
+    font-size: 14px !important; 
+}
+.images-mobile a{
+    font-size: 14px !important; 
 }
 
 
@@ -438,8 +441,57 @@ ul{
 
 /*media query per dispositivi più piccoli o pari a 768px*/
 @media (max-width:768px){
+    .about-col{
+        padding-left:0px;
+    }
+    .sezione-titolo{
+        font-size:40px;
+        padding-bottom:20px;
+    }
+    .sezione-sottotitolo{
+        padding-left:10px;
+        font-size: 40px;;
+    }
+    .sezione-testo{
+        padding-left:10px;
+        padding-right:7px;
+    }
+    h6{
+        padding-left:10px;
+    }
+    .sezione-titolo-faq {
+        padding-bottom: 40px;
+        font-size: 40px;
+        padding-top: 50px;
+    }
+    .sezione-sottotitolo-faq{
+        font-size:40px;
+        padding-top:40px;
+    }
+    #contatti {
+        padding-bottom: 30px;
+    }
+    .sezione-titolo-contatti {
+        font-size: 40px;
+        padding-top: 50px;
+        color:black;
+    }
+    .sezione-sottotitolo-contatti {
+        font-size: 40px;
+        padding-top: 40px;
+    }
     .images-desktop{
         display:none;
+    }
+    .wrapper .icon {
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .progetto-titolo {
+        padding-bottom: 15px;
+        font-size: 40px;
     }
     .progetto-sezione-intro{
         padding-left:10px; 
