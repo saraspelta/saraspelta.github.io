@@ -102,6 +102,13 @@ color: #FFFFFF;
     background-repeat: no-repeat;
     width:100%;
 }
+.faq-seconda-immagine{
+    background-image: url("immagini/omini-donna-bicchiere2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:100%;
+    height:250px!important;
+}
 .sezione-titolo-faq{
     text-align:center; 
     padding-bottom: 30px; 
