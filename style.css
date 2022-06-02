@@ -60,7 +60,8 @@ h6 {
 }
 
 .current_lang {
-    color: purple !important;   
+    color: #6918b4 !important; 
+    background-color: #b478ed;  
   }
   
 
@@ -215,6 +216,75 @@ color: #FFFFFF;
     background-color: #6918b4;
 
 }
+
+
+
+
+/*LINGUE*/
+.dropbtn .dropup{
+    position: fixed;
+      bottom: 20px;
+      left: 5px;
+      border: none;
+      outline: none;
+      background-color: #b478ed;
+      color: white;
+      cursor: pointer;
+      border-radius: 100px;
+      margin: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1)!important;
+      z-index: 1;
+  }
+  
+  .dropup {
+      position: fixed;
+      bottom: 20px;
+      left: 5px;
+      border: none;
+      outline: none;
+      background-color: #b478ed;
+      color: white;
+      cursor: pointer;
+      border-radius: 100px;
+      margin: 10px;
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1)!important;
+      z-index: 1;
+  }
+  
+  .dropup-content { 
+    display: none;
+    position: absolute;
+    background-color: #ACC6FD;
+    min-width: 60px;
+    bottom: 50px;
+    z-index: 1;
+    
+  }
+  
+  .dropup-content p:hover {
+      background-color: #b478ed;
+      color:#6918b4;
+    }
+  
+  .dropup:hover .dropup-content {
+    display: block;
+  }
+  
+  .dropup:hover .dropbtn {
+    background-color: #6918b4;
+    border-radius: 100px;
+      width: 50px;
+      height: 50px;
+  }
+
+
+
 
 #progetto{
     padding-top:70px;

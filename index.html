@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" contemt="notranslate" />
     <title>Sara Spelta - Designer</title>
     <meta name="description" content="Sara Spelta">
     <link rel="icon" href="immagini/logo-nero.gif">
@@ -16,6 +17,8 @@
     <style id="css" type="text/css"></style>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    
 
     <!-- Font Awesome 5.15.1 CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -41,16 +44,22 @@
         </li>
         
         <li class="nav-item">
-          <a class="nav-link single" href="#about">Chi sono</a>
+          <a class="nav-link single" href="#about" id="it">Chi sono</a>
+          <a class="nav-link single" href="#about" id="en">Who I am</a>
+          <a class="nav-link single" href="#about" id="de">Wer bin ich</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link single" href="#grafica">Grafica</a>
+          <a class="nav-link single" href="#grafica" id="it">Grafica</a>
+          <a class="nav-link single" href="#grafica" id="en">Grafics</a>
+          <a class="nav-link single" href="#grafica" id="de">Grafik</a>
         </li>
         <li class="nav-item">
           <a class="nav-link single" href="#lettering">Lettering</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link single" href="#illustrazioni">Illustrazioni</a>
+          <a class="nav-link single" href="#illustrazioni" id="it">Illustrazioni</a>
+          <a class="nav-link single" href="#illustrazioni" id="en">Illustrations</a>
+          <a class="nav-link single" href="#illustrazioni" id="de">Illustrationen</a>
         </li>
         <li class="nav-item">
           <a class="nav-link single" href="#faq">FAQ</a>
@@ -60,9 +69,7 @@
         </li>
       </ul>
 
-      <span class="navbar-text small text-right language current_lang" style="margin-right:20px;" id="it_click">IT</span>
-      <span class="navbar-text small text-right language" style="margin-right:20px;">EN</span>
-      <span class="navbar-text small text-right language">DE</span>
+      
     </div>
     
   </div>
@@ -541,7 +548,18 @@
 
 <!----------------------------------------------------TORNA SU------------------------------------------------------------>
     <button type="button" class="btn btn-lg" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
-    
+ 
+<!------------------------------------------------------LINGUE------------------------------------------------------------>
+
+
+<div class="dropup">
+  <button class="dropbtn btn btn-lg" type="button" title="Languages"><i class="fa fa-language" aria-hidden="true" style="color:white;"></i></button>
+  <div class="dropup-content text-center">    
+          <p id="en_click" class="current_lang">En</p>
+          <p id="it_click" >It</p>
+          <p id="de_click">De</p>
+  </div>
+</div>
     
 <!----------------------------------------------------FOOTER--------------------------------------------------------------> 
   <div class="footer">
@@ -610,21 +628,28 @@
     </script>
  
  
- <!--language en/it
-    <script>
-      var italian = document.getElementById('it_click'),
+ <!--language en/it/de-->
+<script>
+  var italian = document.getElementById('it_click'),
   english = document.getElementById('en_click'),
+  german = document.getElementById('de_click'),
   it_txt = document.querySelectorAll('#it'),
   en_txt = document.querySelectorAll('#en'),
+  de_txt = document.querySelectorAll('#de'),
   nb_it = it_txt.length,
   nb_en = en_txt.length;
+  nb_de = de_txt.length;
 
 italian.addEventListener('click', function() {
-  langue(italian,english);
+  langue(italian,english,german);
 }, false);
 
 english.addEventListener('click', function() {
-  langue(english,italian);
+  langue(english,italian,german);
+}, false);
+
+german.addEventListener('click', function() {
+  langue(german,italian,english);
 }, false);
 
 function langue(langueOn,langueOff){
@@ -634,11 +659,21 @@ function langue(langueOn,langueOff){
   }
   if(langueOn.innerHTML == 'It'){
       afficher(it_txt, nb_it);
-      cacher(en_txt, nb_en);
+      cacher(en_txt, nb_en)
+      cacher(de_txt, nb_de);
+      
   }
-  else if(langueOn.innerHTML == 'En'){
+  if(langueOn.innerHTML == 'En'){
       afficher(en_txt, nb_en);
-      cacher(it_txt, nb_it);
+      cacher(it_txt, nb_it)
+      cacher(de_txt, nb_de);
+    
+  }
+  else if(langueOn.innerHTML == 'De'){
+      afficher(de_txt, nb_de);
+      cacher(it_txt, nb_it)
+      cacher(en_txt, nb_en);
+      
   }
 }
 
@@ -653,10 +688,11 @@ function cacher(txt,nb){
   }
 }
 function init(){
-  langue(english,italian);
+  langue(english,italian,german);
 }
 init();
-    </script>-->
+</script>
+  
 
 <!--Zoom immagini progetti-->
     <script>
