@@ -549,6 +549,9 @@ color: #FFFFFF;
         font-size:40px;
         padding-top:40px;
     }
+    .faq-seconda-immagine {
+        height: 150px!important;
+    }
     #contatti {
         padding-bottom: 30px;
     }
