@@ -25,10 +25,10 @@
     
     <!--NAVBAR-->
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html">
-      <img src="immagini/logo.gif" width="auto" height="45" alt="logo Sara Spelta" class="d-inline-block">
+      <img src="immagini/logo-nero.gif" width="auto" height="45" alt="logo Sara Spelta" class="d-inline-block">
     </a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,27 +42,41 @@
         
         <li class="nav-item">
           <a class="nav-link single" href="index.html#about">Chi sono</a>
+          <a class="nav-link single" href="index.html#about" id="en">Who I am</a>
+          <a class="nav-link single" href="index.html#about" id="de">Wer bin ich</a>
         </li>
         <li class="nav-item">
           <a class="nav-link single" href="index.html#grafica">Grafica</a>
+          <a class="nav-link single" href="index.html#grafica" id="en">Grafics</a>
+          <a class="nav-link single" href="index.html#grafica" id="de">Grafik</a>
         </li>
         <li class="nav-item">
           <a class="nav-link single" href="index.html#lettering">Lettering</a>
+          <a class="nav-link single" href="index.html#lettering" id="en">Lettering</a>
+          <a class="nav-link single" href="index.html#lettering" id="de">Lettering</a>
         </li>
         <li class="nav-item">
           <a class="nav-link single" href="index.html#illustrazioni">Illustrazioni</a>
+          <a class="nav-link single" href="index.html#illustrazioni" id="en">Illustrations</a>
+          <a class="nav-link single" href="index.html#illustrazioni" id="de">Illustrationen</a>
         </li>
         <li class="nav-item">
           <a class="nav-link single" href="index.html#faq">FAQ</a>
+          <a class="nav-link single" href="index.html#faq" id="en">FAQ</a>
+          <a class="nav-link single" href="index.html#faq" id="de">FAQ</a>
         </li>
         <li class="nav-item">
           <a class="nav-link single" href="index.html#contatti" id="it">Contatti</a>
+          <a class="nav-link single" href="index.html#contatti" id="en">Contacts</a>
+          <a class="nav-link single" href="index.html#contatti" id="de">Kontakte</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link single" href="CVprova.pdf" target="_blank" id="it">CV</a>
+          <a class="nav-link single" href="CVprova.pdf" target="_blank" id="en">CV</a>
+          <a class="nav-link single" href="CVprova.pdf" target="_blank" id="de">CV</a>
         </li>
       </ul>
 
-      <span class="navbar-text small text-right language current_lang" style="margin-right:20px;" id="it_click">IT</span>
-      <span class="navbar-text small text-right language" style="margin-right:20px;">EN</span>
-      <span class="navbar-text small text-right language">DE</span>
     </div>
     
   </div>
@@ -157,7 +171,15 @@
 <!----------------------------------------------------TORNA SU------------------------------------------------------------>
     <button type="button" class="btn btn-lg" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
     
-    
+<!------------------------------------------------------LINGUE------------------------------------------------------------>
+<div class="dropup">
+  <button class="dropbtn btn btn-lg" type="button" title="Languages"><i class="fa fa-language" aria-hidden="true" style="color:white;"></i></button>
+  <div class="dropup-content text-center">  
+    <p id="it_click" class="current_lang">It</p>  
+    <p id="en_click">En</p>
+    <p id="de_click">De</p>
+  </div>
+</div>    
 <!----------------------------------------------------FOOTER--------------------------------------------------------------> 
   <div class="footer">
     
@@ -225,35 +247,52 @@
     </script>
  
  
- <!--language en/it
-    <script>
-      var italian = document.getElementById('it_click'),
+ <!--language it/en/de-->
+ <script>
+  var italian = document.getElementById('it_click'),
   english = document.getElementById('en_click'),
+  german = document.getElementById('de_click'),
   it_txt = document.querySelectorAll('#it'),
   en_txt = document.querySelectorAll('#en'),
+  de_txt = document.querySelectorAll('#de'),
   nb_it = it_txt.length,
   nb_en = en_txt.length;
+  nb_de = de_txt.length;
 
 italian.addEventListener('click', function() {
-  langue(italian,english);
+  langue(italian,english,german);
 }, false);
 
 english.addEventListener('click', function() {
-  langue(english,italian);
+  langue(english,italian,german);
+}, false);
+
+german.addEventListener('click', function() {
+  langue(german,italian,english);
 }, false);
 
 function langue(langueOn,langueOff){
   if (!langueOn.classList.contains('current_lang')) {
-      langueOn.classList.toggle('current_lang');
-      langueOff.classList.toggle('current_lang');
+      langueOn.classList.toggle('current_lang')
+      langueOff.classList.toggle('current_lang')
   }
   if(langueOn.innerHTML == 'It'){
       afficher(it_txt, nb_it);
-      cacher(en_txt, nb_en);
+      cacher(en_txt, nb_en)
+      cacher(de_txt, nb_de);
+      
   }
-  else if(langueOn.innerHTML == 'En'){
+  if(langueOn.innerHTML == 'En'){
       afficher(en_txt, nb_en);
-      cacher(it_txt, nb_it);
+      cacher(it_txt, nb_it)
+      cacher(de_txt, nb_de);
+    
+  }
+  else if(langueOn.innerHTML == 'De'){
+      afficher(de_txt, nb_de);
+      cacher(it_txt, nb_it)
+      cacher(en_txt, nb_en);
+      
   }
 }
 
@@ -268,10 +307,10 @@ function cacher(txt,nb){
   }
 }
 function init(){
-  langue(english,italian);
+  langue(italian,english,german);
 }
 init();
-    </script>-->
+</script>
 
 <!--Zoom immagini progetti-->
     <script>
